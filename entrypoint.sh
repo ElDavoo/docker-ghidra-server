@@ -9,11 +9,11 @@ if [ "$1" = 'server' ]; then
 
   # Add users
   GHIDRA_USERS=${GHIDRA_USERS:-admin}
-  if [ ! -e "/repos/users" ] && [ ! -z "${GHIDRA_USERS}" ]; then
-    mkdir -p /repos/~admin
+  if [ ! -e "/ghidra/repositories/users" ] && [ ! -z "${GHIDRA_USERS}" ]; then
+    mkdir -p /ghidra/repositories/~admin
     for user in ${GHIDRA_USERS}; do
       echo "Adding user: ${user}"
-      echo "-add ${user}" >> /repos/~admin/adm.cmd
+      echo "-add ${user}" >> /ghidra/repositories/~admin/adm.cmd
     done
   fi
 
